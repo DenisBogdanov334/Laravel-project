@@ -1,0 +1,1 @@
+This is the repository of Atanas and Denis from ES-34 for the WEB3 course.

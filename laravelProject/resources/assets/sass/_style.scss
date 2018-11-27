@@ -1,0 +1,39 @@
+#navbar{
+    margin-top: 0px;
+    background-color: black;
+    height: 60px;
+    text-align: center;
+    
+    }
+    .text{
+    font-size: 20px;
+    margin: 0px;
+    }
+    .button{
+    height: 90%;
+    width: 20%;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 30px;
+    color: white;
+    background-color: black;
+    border: 0px;
+    }
+    .button:hover{
+    background-color: darkslategray;
+    }
+    #main{
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 800px;
+    background-color: azure;
+    align-content: center;
+    }
+    .contentBlock{
+    margin-left: 10%;
+    margin-right: 10%;
+    align-content: center;
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    }

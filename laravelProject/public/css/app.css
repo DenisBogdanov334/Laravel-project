@@ -10481,7 +10481,6 @@ a.text-dark:focus {
 .button {
   height: 90%;
   width: 20%;
-  margin-left: 20px;
   margin-right: 20px;
   font-size: 30px;
   color: white;
@@ -10503,8 +10502,8 @@ a.text-dark:focus {
 }
 
 .contentBlock {
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   -ms-flex-line-pack: center;
       align-content: center;
   padding-top: 5%;

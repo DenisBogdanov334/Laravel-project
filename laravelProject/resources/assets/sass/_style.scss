@@ -39,11 +39,40 @@
     padding-right: 5%;
     }
 .container{
-    background-color: black;
     padding: 0px;
     margin: 0px;
 }
 .navbar{
     background-color: black;
     color: white;
+}
+.image{
+    align-content: center;
+    width: 50%;
+}
+.thumbnail{
+    height: 250px;
+    width: 250px;
+}
+a{
+    text-decoration: none !important;
+}
+a:hover{
+    color: white !important;
+}
+.nav-item{
+    position: absolute;
+    top: 15%;
+    right: 5%;
+}
+.dropdown-menu{
+    background-color: black;
+    position: relative;
+    z-index: 1;
+}
+.dropdown-item{
+    color: white;
+}
+.dropdown-item:hover{
+    background-color: darkslategray;
 }

@@ -20,14 +20,14 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav class="navbar">
             <div class="container">
                     <div id="navbar">
                         <a class="navbar-brand" style="font-size: 30px; color: white" href="/">DaBlog</a>
                         <button class="button" onclick="location.href='{{ url('') }}'">Home</button>
                         <button class="button" onclick="location.href='{{ url('posts') }}'">Blogs</button>
                         <button class="button" onclick="location.href='{{ url('about') }}'">About</button>
-                        <button class="button" onclick="location.href='{{ url('posts/create') }}'">Create Post</button>
+                        <button class="button" onclick="location.href='{{ url('posts/create') }}'">Post</button>
                     </div>
 
 
@@ -65,7 +65,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main id="main">
             @yield('content')
         </main>
     </div>

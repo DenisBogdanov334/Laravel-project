@@ -10470,6 +10470,7 @@ a.text-dark:focus {
   margin-top: 0px;
   background-color: black;
   height: 60px;
+  width: 80%;
   text-align: center;
 }
 
@@ -10480,7 +10481,7 @@ a.text-dark:focus {
 
 .button {
   height: 90%;
-  width: 20%;
+  width: 15%;
   margin-right: 20px;
   font-size: 30px;
   color: white;
@@ -10499,6 +10500,7 @@ a.text-dark:focus {
   background-color: azure;
   -ms-flex-line-pack: center;
       align-content: center;
+  padding: 20px;
 }
 
 .contentBlock {
@@ -10509,6 +10511,17 @@ a.text-dark:focus {
   padding-top: 5%;
   padding-left: 5%;
   padding-right: 5%;
+}
+
+.container {
+  background-color: black;
+  padding: 0px;
+  margin: 0px;
+}
+
+.navbar {
+  background-color: black;
+  color: white;
 }
 
 .navbar-laravel {

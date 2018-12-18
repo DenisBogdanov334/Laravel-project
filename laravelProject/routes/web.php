@@ -23,7 +23,7 @@ Route::get('profile', 'UserController@profile');
 
 Route::post('profile','UserController@update_avatar');
 
-Route::get('users/export', 'UserController@export');
+Route::get('/posts/{id}/pdf', 'PostController@export_pdf');
 
 Auth::routes();
 

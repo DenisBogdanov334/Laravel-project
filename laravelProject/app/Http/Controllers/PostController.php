@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Post;
+use App;
 use Image;
 use PDF;
 
@@ -188,6 +189,8 @@ class PostController extends Controller
     {
         $post = Post::find($id);
 
-        $pdf = PDF::loadView('show.blade', $post);
+        $pdf = PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])
+        ->loadView('posts.pdf',compact('post'));
+        return $pdf->download('post.pdf');
     }
 }

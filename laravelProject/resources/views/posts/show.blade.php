@@ -22,4 +22,7 @@
             {!!Form::close() !!}
         @endif
     @endif
+{!!Form::open(['action' => ['PostController@export_pdf', $post->id], 'method' => 'get', 'class' => 'pull-right'])!!}
+    {{Form::submit('Export as PDF', ['class' => 'btn btn-default'])}}
+{!!Form::close() !!}
 @endsection

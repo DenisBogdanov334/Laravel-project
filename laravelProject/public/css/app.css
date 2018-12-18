@@ -10472,6 +10472,7 @@ a.text-dark:focus {
   height: 60px;
   width: 80%;
   text-align: center;
+  padding: 0px;
 }
 
 .text {
@@ -10514,7 +10515,6 @@ a.text-dark:focus {
 }
 
 .container {
-  background-color: black;
   padding: 0px;
   margin: 0px;
 }
@@ -10522,6 +10522,45 @@ a.text-dark:focus {
 .navbar {
   background-color: black;
   color: white;
+}
+
+.image {
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 50%;
+}
+
+.thumbnail {
+  height: 250px;
+  width: 250px;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: white !important;
+}
+
+.nav-item {
+  position: absolute;
+  top: 15%;
+  right: 5%;
+}
+
+.dropdown-menu {
+  background-color: black;
+  position: relative;
+  z-index: 1;
+}
+
+.dropdown-item {
+  color: white;
+}
+
+.dropdown-item:hover {
+  background-color: darkslategray;
 }
 
 .navbar-laravel {

@@ -58,11 +58,16 @@ a{
     text-decoration: none !important;
 }
 a:hover{
-    color: white !important;
+    color: none !important;
 }
-.nav-item{
+.nav-item1{
     position: absolute;
     top: 15%;
+    right: 5%;
+}
+.nav-item2{
+    position: absolute;
+    top: 50%;
     right: 5%;
 }
 .dropdown-menu{

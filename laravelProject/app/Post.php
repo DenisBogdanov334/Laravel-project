@@ -6,6 +6,8 @@ class Post extends Model
 {
     protected $table = 'posts';
 
+    protected $fillable = ['title', 'body'];
+
     public $primaryKey = 'id';
 
     public $timestamps = true;

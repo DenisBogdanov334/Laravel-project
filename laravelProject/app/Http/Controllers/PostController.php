@@ -85,7 +85,9 @@ class PostController extends Controller
         $post->cover_image = $fileNameToStore;
         $post->save();
 
-        return redirect('/posts')->with('success', 'Post Created');
+        return response()->json($post, 201);
+        //pre RESTFUL API
+        //return redirect('/posts')->with('success', 'Post Created');
     }
 
     /**
@@ -97,7 +99,10 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
-        return view('posts.show')->with('post', $post);
+
+        return $post;
+        //pre RESTful
+        //return view('posts.show')->with('post', $post);
     }
 
     /**
@@ -159,7 +164,10 @@ class PostController extends Controller
         }
         $post->save();
 
-        return redirect('/posts')->with('success', 'Post Updated');        
+        return response()->json($post, 200);
+
+        //Pre RESTful API
+        //return redirect('/posts')->with('success', 'Post Updated');        
     }
 
     /**
@@ -174,7 +182,7 @@ class PostController extends Controller
         
         //check for correct user
         if(auth()->user()->id !== $post->user_id){
-            return redirect('/posts')->with('error', 'Unauthorized Page');
+            return response()->json(null, 401);
         }
         if($post->cover_image != 'noImage.jpg'){
             //Delete image
@@ -182,7 +190,11 @@ class PostController extends Controller
         }
 
         $post->delete();
-        return redirect('/posts')->with('success', 'Post Removed');        
+
+        return response()->json(null, 204);
+        
+        //Pre RESTful API
+        //return redirect('/posts')->with('success', 'Post Removed');        
     }
 
     public function export_pdf($id)

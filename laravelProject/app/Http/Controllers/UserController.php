@@ -8,32 +8,26 @@ use Auth;
 use Image;
 use App\Exports\UsersExport;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Http\Controllers\Controller;
+use App\User;
 
 class UserController extends Controller
 {
     //
-    public function profile(){
-        return view ('profile', array('user' => Auth::user()) );
+    public function profile()
+    {
+        return view('profile', array('user' => Auth::user()));
     }
+
     public function export()
     {
         return Excel::download(new UsersExport, 'users.xlsx');
     }
 
-    public function update_avatar(Request $request){
-
-      /*  if($request->hasFile('avatar')){
-            $avatar = $request->file('avatar');
-            $filename = time() . '.' . $avatar->getClientOriginalExtension();
-            $filename = Image::make($avatar)->resize(250,250)->save( public_path('/uploads/avatars/' . $filename));
-
-            $user = Auth::user();
-            $user->avatar = $filename;
-            $user->save();
-        }
-      */
+    public function update_avatar(Request $request,$id)
+    {
+        //Handle file upload
         if($request->hasFile('avatar')){
+            $file = $request->file('avatar');
             //get filename with extension
             $fileNameWithExt = $request->file('avatar')->getClientOriginalName();
             //get just filename
@@ -43,8 +37,16 @@ class UserController extends Controller
             //generate filename
             $fileNameToStore = $filename.'_'.time().'.'.$extension;
             //save
-            $path = $request->file('avatar')->storeAs('public/uploads/avatars', $fileNameToStore);
+            $img = \Image::make($file);
+            $img->save('storage/avatars/'.$fileNameToStore);
         }
-        return view('profile', array('user' => Auth::user()) );
+        else{
+            $fileNameToStore = 'noImage.Jpg';
+        }
+        $user = User::find($id);
+        $user->avatar = $fileNameToStore;
+        $user->save();
+
+        return redirect('/profile')->with('success', 'Image Updated');
     }
 }

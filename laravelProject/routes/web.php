@@ -21,7 +21,7 @@ Route::resource('posts', 'PostController');
 
 Route::get('profile', 'UserController@profile');
 
-Route::post('profile','UserController@update_avatar');
+Route::post('profile/{id}','UserController@update_avatar');
 
 Route::get('users/export', 'UserController@export');
 

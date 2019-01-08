@@ -32,6 +32,11 @@
                                     {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
                                 {!!Form::close() !!}
                             </td>
+                            <td>               
+                            {!!Form::open(['action' => ['PostController@export_pdf', $post->id], 'method' => 'GET', 'class' => 'pull-right'])!!}
+                                {{Form::submit('Export as PDF', ['class' => 'btn btn-primary'])}}
+                            {!!Form::close() !!}
+                            </td>
                         </tr> 
                         @endforeach
                     </table>
